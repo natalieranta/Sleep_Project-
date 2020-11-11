@@ -10,14 +10,16 @@ def parse_patient_data(file):
     datapts = []
     with open(file, "r") as filestream:
         for line in filestream:
-
+            
+            #separate data whenever there is a space, comma, or special character
             elem = re.findall(r'[^,;\s]+', line)
             time = float(elem[0])
-
+            
+           # remove data occuring before a specified start time 
             if(float(time > START_TIME)):
-
                 times.append(time)
-                #collect datapoints
+                
+                #collect datapoints 
                 if (len(elem) == 2):
                     datapts.append(float(elem[1]))
 
@@ -31,6 +33,7 @@ def parse_patient_data(file):
     print("patient " + ((re.findall('\d+', file )))[0] + " done")
     return times, datapts
 
+#retrieve text documents from directory: must have folders in same place as code
 def collect_data(directory):
     patient_files = []
     print(directory + ' data:')
