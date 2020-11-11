@@ -57,7 +57,6 @@ def main():
     #motion_data = collect_data('motion')
 
     #collects labelled sleep
-
     #sleep_labels = collect_data('labels')
 
 main()
