@@ -42,10 +42,6 @@ def collect_data(directory):
             continue
     return patient_files
 
-#two_bins must be fed a data set with time data and corresponding output data
-#def to_bins(dataset, bins):
- #   for
-  #  return
 
 def main():
     #returns patient heart rate data
@@ -63,7 +59,5 @@ def main():
     #collects labelled sleep
 
     #sleep_labels = collect_data('labels')
-
-   # to_bins(heart_rate_data, sleep_labels)
 
 main()
