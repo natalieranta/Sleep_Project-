@@ -2,7 +2,7 @@ import numpy as np
 import datetime
 from dataSort import collect_data
 import pandas as pd
-today = datetime.datetime.today()
+today = datetime.datetime.today() #arbitraily chose today, doesnt matter what day it is 
 
 #interpolate data for 1 second
 def interpolate_seconds(x,y):
