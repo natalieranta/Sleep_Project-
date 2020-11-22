@@ -28,7 +28,7 @@ from IPython.display import display # Allows the use of display() for DataFrames
 # %matplotlib inline
 # constants
 FIG_SIZE = (14,8)
-TEST_SIZE = 0.10
+TEST_SIZE = 0.30
 
 """# New Section"""
 
@@ -41,11 +41,10 @@ plt.figure(figsize = FIG_SIZE)
 plt.title("Heatmap of feature correlations")
 _ = sns.heatmap(correlations, vmin=0, vmax=1, annot=True)
 
-#use qcut to bin heart rate data  & label data
-data = data1.copy()
-data["heart rate"] = pd.qcut(data['heart rate'], 5, labels = [5, 4, 3, 2, 1]) # 5 bins
-
-data.head()
+#make label data binary
+#change label to 0 and 1 (0 awake, 1 sleep)
+data[data['psg label']>0]=1
+data['psg label'].value_counts()
 
 """START with first Model  DecisionTreeRegressor
 
@@ -136,8 +135,3 @@ plt.scatter(Y_test, predictions)
 
 #prediction on test data
 Knn_prediction = knn.predict(testSet)
-
-#download code as Pdf file
-
-!sudo apt-get install texlive-xetex
-!jupyter nbconvert --to pdf Add_Column_Special_Event_Day_Feature.ipynb
