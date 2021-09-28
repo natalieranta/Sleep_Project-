@@ -7,3 +7,6 @@ the classifier with the best performance. The results obtained by
 the classifiers were validated against the gold standard in sleep
 detection. The proposed models achieved an accuracy of 95% for
 3 sleep stages prediction and 75% for all sleep stages prediction
+
+
+data is taken from: https://github.com/ojwalch/sleep_classifiers
